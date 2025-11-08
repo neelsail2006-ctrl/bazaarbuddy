@@ -1,0 +1,389 @@
+/* ===== COMPLETE src/styles/SellProduct.css ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sell-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  animation: fadeIn 0.6s ease;
+}
+
+.sell-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 600px;
+  animation: slideUp 0.6s ease;
+}
+
+.sell-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sell-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.sell-header p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ===== FORM STYLING ===== */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: #f8f9ff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+}
+
+/* ===== IMAGE PREVIEW ===== */
+.image-preview {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 8px;
+  text-align: center;
+  border: 2px dashed #667eea;
+}
+
+.image-preview p {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.image-preview img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  background: linear-gradient(135deg, #ccc 0%, #aaa 100%);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.error-message {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #f5c6cb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== FORM VALIDATION STYLING ===== */
+.form-group input:valid,
+.form-group textarea:valid {
+  border-color: #4caf50;
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: #f44336;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .sell-container {
+    padding: 1.5rem;
+    align-items: flex-start;
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .sell-card {
+    padding: 1.8rem;
+    max-width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .sell-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .sell-header p {
+    font-size: 0.9rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 0.8rem 0.9rem;
+    font-size: 16px;
+  }
+
+  .image-preview {
+    padding: 1rem;
+  }
+
+  .image-preview img {
+    max-height: 200px;
+  }
+
+  .btn-primary {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sell-container {
+    padding: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .sell-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .sell-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .sell-header p {
+    font-size: 0.85rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 0.75rem 0.8rem;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+  }
+
+  .image-preview {
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .image-preview p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .image-preview img {
+    max-height: 150px;
+    border-radius: 5px;
+  }
+
+  .btn-primary {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    border-radius: 5px;
+  }
+
+  .error-message {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .sell-card {
+    padding: 1.2rem;
+  }
+
+  .sell-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .sell-header p {
+    font-size: 0.8rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 0.7rem 0.7rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+.sell-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sell-card::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.sell-card::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.sell-card::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .sell-container {
+    background: white;
+  }
+
+  .sell-card {
+    box-shadow: none;
+  }
+
+  .btn-primary {
+    display: none;
+  }
+}
